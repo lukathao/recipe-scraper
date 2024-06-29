@@ -1,4 +1,13 @@
-class Recipe_DBO:
+from marshmallow import Schema, fields
+
+class Recipe_Schema(Schema):
+  title = fields.Str()
+  link = fields.Str()
+  ingredients = fields.List(fields.Str())
+  instructions = fields.Str()
+
+
+class Recipe_Model:
   def __init__(self, link, title, ingredients, instructions):
     self.link = link
     self.title = title

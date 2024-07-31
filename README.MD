@@ -6,3 +6,6 @@ pip install -r requirements.txt
 
 ### Recipe target sites
 https://www.allrecipes.com/recipes/227/world-cuisine/asian/
+
+### Running
+On main.py click run button

@@ -1,10 +1,14 @@
-from marshmallow import Schema, fields
+from marshmallow import Schema, fields, post_load
 
 class Recipe_Schema(Schema):
   title = fields.Str()
   link = fields.Str()
   ingredients = fields.List(fields.Str())
   instructions = fields.Str()
+
+  @post_load
+  def create_recipe(self, data, **kwargs):
+    return Recipe_Model(**data)
 
 
 class Recipe_Model:
